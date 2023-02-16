@@ -22,10 +22,12 @@ function playRound(playerSelection, computerSelection) {
         console.log(`You lose!\nComputer: ${computerSelection}\n   beats\nPlayer: ${playerSelection}`);
         return 0;
     } else if (playerSelection === computerSelection) {
-        console.log("It's a tie...");
+        console.log("It's a tie... Try again!");
+        alert("It's a tie... Try again!");
         return 2;
     } else {
         console.log("Please pick a valid option.");
+        alert("Please pick a valid option.")
         return null;
     }
 }
@@ -47,12 +49,15 @@ function game() {
         } else {
             win += 0;
             lose += 0;
+            i -= 1;
         }
     }
     if (win > lose) {
         console.log(`You win! Score: ${win} to ${lose}`);
+        alert(`You win! Score: ${win} to ${lose}`);
     } else if (win < lose) {
         console.log(`You lose... Score: ${win} to ${lose}`);
+        alert(`You lose... Score: ${win} to ${lose}`);
     } else {
         console.log("Tie Game!")
     }
