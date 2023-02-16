@@ -12,20 +12,21 @@ function getPlayerChoice () {
 
 // make function that plays one round, declares the winner with explanation
     // takes player and computer choices as parameters
-function playRound (playerSelection, computerSelection) {
-    if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || 
-    playerSelection === "scissors" && computerSelection === "paper") {
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
+        playerSelection === "scissors" && computerSelection === "paper") {
         console.log(`You win!\nPlayer: ${playerSelection}\n   beats\nComputer: ${computerSelection}`);
         return 1;
-    } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" && 
-    playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
+    } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
+        playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         console.log(`You lose!\nComputer: ${computerSelection}\n   beats\nPlayer: ${playerSelection}`);
         return 0;
     } else if (playerSelection === computerSelection) {
         console.log("It's a tie...");
-        return null;
+        return 2;
     } else {
         console.log("Please pick a valid option.");
+        return null;
     }
 }
 
@@ -41,6 +42,8 @@ function game() {
             win += 1;
         } else if (winLose === 0) {
             lose += 1;
+        } else if (winLose === null) {
+            i -= 1;
         } else {
             win += 0;
             lose += 0;
