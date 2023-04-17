@@ -23,11 +23,11 @@ function playRound(playerSelection, computerSelection) {
         return 0;
     } else if (playerSelection === computerSelection) {
         console.log("It's a tie... Try again!");
-        alert("It's a tie... Try again!");
+        //alert("It's a tie... Try again!");
         return 2;
     } else {
         console.log("Please pick a valid option.");
-        alert("Please pick a valid option.")
+        //alert("Please pick a valid option.")
         return null;
     }
 }
@@ -63,4 +63,4 @@ function game() {
     }
 }
 
-game()
+playRound(getPlayerChoice(), getComputerChoice());
