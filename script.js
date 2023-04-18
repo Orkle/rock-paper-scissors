@@ -7,7 +7,7 @@ function getComputerChoice () {
 
 // make function that prompts user for their choice of rock, paper, or scissors
 function getPlayerChoice () {
-    return prompt("What do you wish to play? Rock, paper, or scissors: ").toLowerCase()
+    // return prompt("What do you wish to play? Rock, paper, or scissors: ").toLowerCase()
 }
 
 // make function that plays one round, declares the winner with explanation
@@ -63,4 +63,26 @@ function game() {
     }
 }
 
-playRound(getPlayerChoice(), getComputerChoice());
+function rockPress() {
+    playRound("rock", getComputerChoice());
+}
+
+function paperPress() {
+    playRound("paper", getComputerChoice());
+}
+
+function scissorsPress() {
+    playRound("scissors", getComputerChoice());
+}
+
+let rock = document.querySelector("#rock");
+rock.addEventListener('click', rockPress);
+
+let paper = document.querySelector("#paper");
+paper.addEventListener('click', paperPress);
+
+let scissors = document.querySelector("#scissors");
+scissors.addEventListener('click', scissorsPress);
+
+
+
