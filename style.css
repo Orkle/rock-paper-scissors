@@ -1,6 +1,21 @@
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: rgb(121, 132, 143);
+}
+
+#header {
+  width: 100%;
+}
+
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 200px;
+  margin: 0px;
+  background-color: rgb(109, 8, 241);
 }
 
 .btn {
