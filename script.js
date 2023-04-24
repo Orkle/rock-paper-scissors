@@ -80,26 +80,5 @@ buttons.forEach(btn => btn.addEventListener('click', play));
 
 
 
-// function rockPress() {
-    // playRound("rock", getComputerChoice());
-// }
-
-// function paperPress() {
-    // playRound("paper", getComputerChoice());
-// }
-
-// function scissorsPress() {
-    // playRound("scissors", getComputerChoice());
-// }
-
-// let rock = document.querySelector("#rock");
-// rock.addEventListener('click', rockPress);
-
-// let paper = document.querySelector("#paper");
-// paper.addEventListener('click', paperPress);
-
-// let scissors = document.querySelector("#scissors");
-// scissors.addEventListener('click', scissorsPress);
-
 
 
