@@ -93,11 +93,14 @@ function buttonGlow(e) {
     }
 }
 
+// Plays a round when the buttons are clicked
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
 
+// Makes the buttons glow when clicked
 const glowFist = document.querySelector('.fist');
 glowFist.addEventListener('mousedown', buttonGlow);
+
 
 
 
