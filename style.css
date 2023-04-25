@@ -35,6 +35,7 @@ body {
 }
 
 .introduction {
+  margin-top: 50px;
   font-family: "JMH Typewriter", Arial, Helvetica;
   color: white;
 }
@@ -42,10 +43,12 @@ body {
 .buttons {
   display: flex;
   justify-content: space-around;
-  padding: 30px;
+  margin-top: 50px;
+  padding: 30px 100px;
   border-style: solid;
   border-color: whitesmoke;
-  border-width: 10px;
+  border-width: 8px;
+  border-radius: 15px;
 }
 
 .btn {
