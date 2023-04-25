@@ -75,6 +75,11 @@ function play(e) {
     }
 }
 
+function buttonGlow() {
+    const glowRock = document.querySelector('.fist');
+    glowRock.classList.add('clicked');
+}
+
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
 
