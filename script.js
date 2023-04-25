@@ -75,13 +75,29 @@ function play(e) {
     }
 }
 
-function buttonGlow() {
-    const glowRock = document.querySelector('.fist');
-    glowRock.classList.add('clicked');
+function buttonGlow(e) {
+    if (e.target.id == "rock") {
+        const glow = document.querySelector('.fist');
+        glow.classList.add('clicked');
+    }
+    else if (e.target.id == "paper") {
+        const glow = document.querySelector('.sheet');
+        glow.classList.add('clicked');
+    }
+    else if (e.target.id == "scissors") {
+        const glow = document.querySelector('.slice');
+        glow.classList.add('clicked');
+    }
+    else {
+        return;
+    }
 }
 
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
+
+const glowFist = document.querySelector('.fist');
+glowFist.addEventListener('mousedown', buttonGlow);
 
 
 
