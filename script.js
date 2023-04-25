@@ -101,6 +101,12 @@ buttons.forEach(btn => btn.addEventListener('click', play));
 const glowFist = document.querySelector('.fist');
 glowFist.addEventListener('mousedown', buttonGlow);
 
+const glowSheet = document.querySelector('.sheet');
+glowSheet.addEventListener('mousedown', buttonGlow);
+
+const glowSlice = document.querySelector('.slice');
+glowSlice.addEventListener('mousedown', buttonGlow);
+
 
 
 
