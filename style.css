@@ -1,26 +1,55 @@
+@font-face {
+  font-family: "JMH Typewriter";
+  src: url(../../../landing-page/Landing-Page/Fonts/JMH\ Typewriter.ttf);
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(121, 132, 143);
+  background-color: rgb(21, 20, 22);
 }
 
-#header {
-  width: 100%;
-}
-
-#title {
+.header {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  font-family: "JMH Typewriter", Arial, Helvetica;
+  font-size: 60px;
   align-items: center;
   justify-content: center;
   padding: 40px 200px;
   margin: 0px;
-  background-color: rgb(109, 8, 241);
+  border-radius: 25px;
+  background-color: rgb(68, 67, 70);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.introduction {
+  font-family: "JMH Typewriter", Arial, Helvetica;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .btn {
   display: flex;
   justify-content: center;
-  max-width: 80px;
+  max-width: 120px;
+  font-size: 16px;
   margin: 8px;
+  padding: 8px;
+  border-radius: 20%;
 }
