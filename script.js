@@ -63,6 +63,7 @@ function game() {
     }
 }
 
+// Plays one round of rock paper scissors
 function play(e) {
     if (e.target.id === "rock") {
         playRound("rock", getComputerChoice());
@@ -75,6 +76,7 @@ function play(e) {
     }
 }
 
+// Adds class to make buttons glow with box shadow
 function buttonGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
@@ -93,11 +95,29 @@ function buttonGlow(e) {
     }
 }
 
+function removeGlow(e) {
+    if (e.target.id === "rock") {
+        const glowRemove = document.querySelector('.fist');
+        glowRemove.classList.remove('clicked');
+    }
+    else if (e.target.id === "paper") {
+        const glowRemove = document.querySelector('.sheet');
+        glowRemove.classList.remove('clicked');
+    }
+    else if (e.target.id === "scissors") {
+        const glowRemove = document.querySelector('.slice');
+        glowRemove.classList.remove('clicked');
+    }
+    else {
+        return;
+    }
+}
+
 // Plays a round when the buttons are clicked
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
 
-// Makes the buttons glow when clicked
+// Makes the buttons glow when mouse is being pressed down
 const glowFist = document.querySelector('.fist');
 glowFist.addEventListener('mousedown', buttonGlow);
 
@@ -107,7 +127,15 @@ glowSheet.addEventListener('mousedown', buttonGlow);
 const glowSlice = document.querySelector('.slice');
 glowSlice.addEventListener('mousedown', buttonGlow);
 
+// Removes glow from buttons when mouse is released
+const noGlowFist = document.querySelector('.fist');
+noGlowFist.addEventListener('mouseup', removeGlow);
 
+const noGlowSheet = document.querySelector('.sheet');
+noGlowSheet.addEventListener('mouseup', removeGlow);
+
+const noGlowSlice = document.querySelector('.slice');
+noGlowSlice.addEventListener('mouseup', removeGlow);
 
 
 
