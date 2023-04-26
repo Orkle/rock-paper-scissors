@@ -69,19 +69,19 @@ body {
 
 .fist {
   margin-right: 20px;
-  border-radius: 30%;
+  border-radius: 10%;
 }
 
 .sheet {
   margin-right: 20px;
-  border-radius: 30%;
+  border-radius: 10%;
 }
 
 .slice {
-  border-radius: 30%;
+  border-radius: 10%;
 }
 
 .clicked {
   transform: scale(1.2);
-  box-shadow: inset 0 0 1rem #c8f0ca;
+  box-shadow: inset 0 0 1rem #f8801d;
 }
