@@ -137,15 +137,26 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
 
 
+// Makes buttons glow when clicked
+const glowFistClicked = document.querySelector('.fist');
+glowFistClicked.addEventListener('mousedown', addClickedGlow);
+
+const glowSheetClicked = document.querySelector('.sheet');
+glowSheetClicked.addEventListener('mousedown', addClickedGlow);
+
+const glowSliceClicked = document.querySelector('.slice');
+glowSliceClicked.addEventListener('mousedown', addClickedGlow);
+
+
 // Makes the buttons glow when mouse is over the button
-const glowFist = document.querySelector('.fist');
-glowFist.addEventListener('mouseover', addHoverGlow);
+const glowFistHover = document.querySelector('.fist');
+glowFistHover.addEventListener('mouseover', addHoverGlow);
 
-const glowSheet = document.querySelector('.sheet');
-glowSheet.addEventListener('mouseover', addHoverGlow);
+const glowSheetHover = document.querySelector('.sheet');
+glowSheetHover.addEventListener('mouseover', addHoverGlow);
 
-const glowSlice = document.querySelector('.slice');
-glowSlice.addEventListener('mouseover', addHoverGlow);
+const glowSliceHover = document.querySelector('.slice');
+glowSliceHover.addEventListener('mouseover', addHoverGlow);
 
 
 // Removes glow from buttons when mouse is released
