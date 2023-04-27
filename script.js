@@ -117,15 +117,15 @@ function removeGlow(e) {
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
 
-// Makes the buttons glow when mouse is being pressed down
+// Makes the buttons glow when mouse is over the button
 const glowFist = document.querySelector('.fist');
-glowFist.addEventListener('mousedown', buttonGlow);
+glowFist.addEventListener('mouseover', buttonGlow);
 
 const glowSheet = document.querySelector('.sheet');
-glowSheet.addEventListener('mousedown', buttonGlow);
+glowSheet.addEventListener('mouseover', buttonGlow);
 
 const glowSlice = document.querySelector('.slice');
-glowSlice.addEventListener('mousedown', buttonGlow);
+glowSlice.addEventListener('mouseover', buttonGlow);
 
 // Removes glow from buttons when mouse is released
 const noGlowFistMouseUp = document.querySelector('.fist');
