@@ -77,7 +77,7 @@ function play(e) {
 }
 
 // Adds class to make buttons glow with box shadow
-function buttonGlow(e) {
+function addHoverGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.add('hover');
@@ -117,15 +117,17 @@ function removeHoverGlow(e) {
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
 
+
 // Makes the buttons glow when mouse is over the button
 const glowFist = document.querySelector('.fist');
-glowFist.addEventListener('mouseover', buttonGlow);
+glowFist.addEventListener('mouseover', addHoverGlow);
 
 const glowSheet = document.querySelector('.sheet');
-glowSheet.addEventListener('mouseover', buttonGlow);
+glowSheet.addEventListener('mouseover', addHoverGlow);
 
 const glowSlice = document.querySelector('.slice');
-glowSlice.addEventListener('mouseover', buttonGlow);
+glowSlice.addEventListener('mouseover', addHoverGlow);
+
 
 // Removes glow from buttons when mouse is released
 const noGlowFistMouseUp = document.querySelector('.fist');
@@ -136,6 +138,7 @@ noGlowSheetMouseUp.addEventListener('mouseup', removeHoverGlow);
 
 const noGlowSliceMouseUp = document.querySelector('.slice');
 noGlowSliceMouseUp.addEventListener('mouseup', removeHoverGlow);
+
 
 // Removes glow from buttons when mouse isn't on the object
 const noGlowFistMouseLeave = document.querySelector('.fist');
