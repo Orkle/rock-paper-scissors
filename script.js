@@ -113,6 +113,25 @@ function removeHoverGlow(e) {
     }
 }
 
+// Add glow to buttons when clicked
+function addClickedGlow(e) {
+    if (e.target.id == "rock") {
+        const glow = document.querySelector('.fist');
+        glow.classList.add('clicked');
+    }
+    else if (e.target.id == "paper") {
+        const glow = document.querySelector('.sheet');
+        glow.classList.add('clicked');
+    }
+    else if (e.target.id == "scissors") {
+        const glow = document.querySelector('.slice');
+        glow.classList.add('clicked');
+    }
+    else {
+        return;
+    }
+}
+
 // Plays a round when the buttons are clicked
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.addEventListener('click', play));
