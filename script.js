@@ -80,33 +80,33 @@ function play(e) {
 function buttonGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
-        glow.classList.add('clicked');
+        glow.classList.add('hover');
     }
     else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
-        glow.classList.add('clicked');
+        glow.classList.add('hover');
     }
     else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
-        glow.classList.add('clicked');
+        glow.classList.add('hover');
     }
     else {
         return;
     }
 }
 
-function removeGlow(e) {
+function removeHoverGlow(e) {
     if (e.target.id === "rock") {
         const glowRemove = document.querySelector('.fist');
-        glowRemove.classList.remove('clicked');
+        glowRemove.classList.remove('hover');
     }
     else if (e.target.id === "paper") {
         const glowRemove = document.querySelector('.sheet');
-        glowRemove.classList.remove('clicked');
+        glowRemove.classList.remove('hover');
     }
     else if (e.target.id === "scissors") {
         const glowRemove = document.querySelector('.slice');
-        glowRemove.classList.remove('clicked');
+        glowRemove.classList.remove('hover');
     }
     else {
         return;
@@ -129,21 +129,21 @@ glowSlice.addEventListener('mouseover', buttonGlow);
 
 // Removes glow from buttons when mouse is released
 const noGlowFistMouseUp = document.querySelector('.fist');
-noGlowFistMouseUp.addEventListener('mouseup', removeGlow);
+noGlowFistMouseUp.addEventListener('mouseup', removeHoverGlow);
 
 const noGlowSheetMouseUp = document.querySelector('.sheet');
-noGlowSheetMouseUp.addEventListener('mouseup', removeGlow);
+noGlowSheetMouseUp.addEventListener('mouseup', removeHoverGlow);
 
 const noGlowSliceMouseUp = document.querySelector('.slice');
-noGlowSliceMouseUp.addEventListener('mouseup', removeGlow);
+noGlowSliceMouseUp.addEventListener('mouseup', removeHoverGlow);
 
 // Removes glow from buttons when mouse isn't on the object
 const noGlowFistMouseLeave = document.querySelector('.fist');
-noGlowFistMouseLeave.addEventListener('mouseleave', removeGlow);
+noGlowFistMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
 const noGlowSheetMouseLeave = document.querySelector('.sheet');
-noGlowSheetMouseLeave.addEventListener('mouseleave', removeGlow);
+noGlowSheetMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
 const noGlowSliceMouseLeave = document.querySelector('.slice');
-noGlowSliceMouseLeave.addEventListener('mouseleave', removeGlow);
+noGlowSliceMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
