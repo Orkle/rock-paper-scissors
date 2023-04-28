@@ -95,6 +95,7 @@ function addHoverGlow(e) {
     }
 }
 
+// Removes glow from buttons in which mouse is hovering
 function removeHoverGlow(e) {
     if (e.target.id === "rock") {
         const glowRemove = document.querySelector('.fist');
@@ -114,13 +115,19 @@ function removeHoverGlow(e) {
 }
 
 // Removes green glow from a selected button
-function removeClickedGlow (e) {
+function removeClickedGlow () {
     const rockGlowRemove = document.querySelector('.fist');
-    const paperGlowRemove
+    const paperGlowRemove = document.querySelector('.sheet');
+    const scissorsGlowRemove = document.querySelector('.slice');
+
+    rockGlowRemove.classList.remove('clicked');
+    paperGlowRemove.classList.remove('clicked');
+    scissorsGlowRemove.classList.remove('clicked')
 }
 
 // Add glow to buttons when clicked
 function addClickedGlow(e) {
+    removeClickedGlow()
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.add('clicked');
@@ -138,9 +145,16 @@ function addClickedGlow(e) {
     }
 }
 
-// Plays a round when the buttons are clicked
-const buttons = document.querySelectorAll('.btn');
-buttons.forEach(btn => btn.addEventListener('click', play));
+
+// Makes the buttons glow when mouse is over the button
+const glowFistHover = document.querySelector('.fist');
+glowFistHover.addEventListener('mouseover', addHoverGlow);
+
+const glowSheetHover = document.querySelector('.sheet');
+glowSheetHover.addEventListener('mouseover', addHoverGlow);
+
+const glowSliceHover = document.querySelector('.slice');
+glowSliceHover.addEventListener('mouseover', addHoverGlow);
 
 
 // Makes buttons glow when clicked
@@ -152,17 +166,6 @@ glowSheetClicked.addEventListener('mousedown', addClickedGlow);
 
 const glowSliceClicked = document.querySelector('.slice');
 glowSliceClicked.addEventListener('mousedown', addClickedGlow);
-
-
-// Makes the buttons glow when mouse is over the button
-const glowFistHover = document.querySelector('.fist');
-glowFistHover.addEventListener('mouseover', addHoverGlow);
-
-const glowSheetHover = document.querySelector('.sheet');
-glowSheetHover.addEventListener('mouseover', addHoverGlow);
-
-const glowSliceHover = document.querySelector('.slice');
-glowSliceHover.addEventListener('mouseover', addHoverGlow);
 
 
 // Removes glow from buttons when mouse is released
@@ -185,6 +188,11 @@ noGlowSheetMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
 const noGlowSliceMouseLeave = document.querySelector('.slice');
 noGlowSliceMouseLeave.addEventListener('mouseleave', removeHoverGlow);
+
+
+// Plays a round when the buttons are clicked
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(btn => btn.addEventListener('click', play));
 
 
 // REMINDER: for the play button, try a function that returns the id of the button with the clicked class
