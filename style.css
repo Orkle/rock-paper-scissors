@@ -73,6 +73,15 @@ body {
   /*box-shadow: 0 0 1rem #c8f0ca;*/
 }
 
+.rps {
+  display: flex;
+  font-family: "JMH Typewriter", Arial, Helvetica;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
 .play-button {
   width: 250px;
   height: 125px;
@@ -103,4 +112,8 @@ body {
 .clicked {
   transform: scale(1.4);
   box-shadow: inset 0 0 1rem rgb(2, 190, 2);
+}
+
+.play-clicked {
+  transform: scale(0.8);
 }
