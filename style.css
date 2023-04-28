@@ -74,11 +74,11 @@ body {
 }
 
 .play-button {
-  width: 350px;
-  height: 175px;
+  width: 250px;
+  height: 125px;
   border-radius: 50%;
-  box-shadow: 0 0 2rem grey;
-  opacity: 50%;
+  box-shadow: 0 0 1rem grey;
+  opacity: 100%;
 }
 
 .fist {
