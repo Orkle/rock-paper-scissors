@@ -73,6 +73,14 @@ body {
   /*box-shadow: 0 0 1rem #c8f0ca;*/
 }
 
+.play-button {
+  width: 350px;
+  height: 175px;
+  border-radius: 50%;
+  box-shadow: 0 0 2rem grey;
+  opacity: 50%;
+}
+
 .fist {
   margin-right: 70px;
   border-radius: 10%;
