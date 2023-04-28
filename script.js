@@ -158,6 +158,17 @@ function addClickedGlow(e) {
     console.log(e);
 }
 
+// Shrinks shoot button when clicked
+function shootClickShrink() {
+    const playButton = document.querySelector('.play-button');
+    playButton.classList.add('play-clicked');
+}
+
+// Reverts shoot buttons size back to normal
+function shootClickGrow() {
+    const playButton = document.querySelector('.play-button');
+    playButton.classList.remove('play-clicked');
+}
 
 // Makes the buttons glow when mouse is over the button
 const glowFistHover = document.querySelector('.fist');
@@ -204,8 +215,19 @@ noGlowSliceMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
 
 // Plays a round when the buttons are clicked
-const buttons = document.querySelectorAll('.btn');
-buttons.forEach(btn => btn.addEventListener('click', play));
+// const buttons = document.querySelectorAll('.btn');
+// buttons.forEach(btn => btn.addEventListener('click', play));
 
 
-// REMINDER: for the play button, try a function that returns the id of the button with the clicked class
+// Shrinks shoot button when clicked down
+const shootShrink = document.querySelector('.play-button');
+shootShrink.addEventListener('mousedown', shootClickShrink);
+
+// Reverts shoot button back to normal when mouse is up
+const shootGrow = document.querySelector('.play-button');
+shootGrow.addEventListener('mouseup', shootClickGrow);
+
+
+// TODO: for the play button, try a function that returns the id of the button with the clicked class
+// TODO: Add box shadow to shoot button when hovered over
+// TODO: Decrease shoot button opacity to 50% until a button has been selected
