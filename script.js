@@ -114,35 +114,48 @@ function removeHoverGlow(e) {
     }
 }
 
-// Removes green glow from a selected button
-function removeClickedGlow () {
+// Removes glow from rock button when another button is pressed
+function removeRockGlow () {
     const rockGlowRemove = document.querySelector('.fist');
-    const paperGlowRemove = document.querySelector('.sheet');
-    const scissorsGlowRemove = document.querySelector('.slice');
-
     rockGlowRemove.classList.remove('clicked');
+}
+
+// Removes glow from paper button when another button is pressed
+function removePaperGlow () {
+    const paperGlowRemove = document.querySelector('.sheet');
     paperGlowRemove.classList.remove('clicked');
-    scissorsGlowRemove.classList.remove('clicked')
+}
+
+// Removes glow from scissors button when another button is pressed
+function removeScissorsGlow () {
+    const scissorsGlowRemove = document.querySelector('.slice');
+    scissorsGlowRemove.classList.remove('clicked');
 }
 
 // Add glow to buttons when clicked
 function addClickedGlow(e) {
-    removeClickedGlow()
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
-        glow.classList.add('clicked');
+        glow.classList.toggle('clicked');
+        removePaperGlow();
+        removeScissorsGlow();
     }
     else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
-        glow.classList.add('clicked');
+        glow.classList.toggle('clicked');
+        removeRockGlow();
+        removeScissorsGlow()
     }
     else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
-        glow.classList.add('clicked');
+        glow.classList.toggle('clicked');
+        removeRockGlow();
+        removePaperGlow();
     }
     else {
         return;
     }
+    console.log(e);
 }
 
 
