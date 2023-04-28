@@ -113,6 +113,12 @@ function removeHoverGlow(e) {
     }
 }
 
+// Removes green glow from a selected button
+function removeClickedGlow (e) {
+    const rockGlowRemove = document.querySelector('.fist');
+    const paperGlowRemove
+}
+
 // Add glow to buttons when clicked
 function addClickedGlow(e) {
     if (e.target.id == "rock") {
@@ -180,3 +186,5 @@ noGlowSheetMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 const noGlowSliceMouseLeave = document.querySelector('.slice');
 noGlowSliceMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
+
+// REMINDER: for the play button, try a function that returns the id of the button with the clicked class
