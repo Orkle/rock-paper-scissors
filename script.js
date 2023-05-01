@@ -1,16 +1,16 @@
-// make function that chooses the computer play randomly from an array
+// Chooses the computer play randomly from an array
 function getComputerChoice () {
     let choice = ["rock", "paper", "scissors"];
     let randomChoiceNum = Math.floor(Math.random()*choice.length);
     return choice[randomChoiceNum];
 }
 
-// make function that prompts user for their choice of rock, paper, or scissors
+// Prompts user for their choice of rock, paper, or scissors
 function getPlayerChoice () {
     // return prompt("What do you wish to play? Rock, paper, or scissors: ").toLowerCase()
 }
 
-// make function that plays one round, declares the winner with explanation
+// Plays one round, declares the winner with explanation
     // takes player and computer choices as parameters
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// make function that plays five rounds
+// Plays five rounds
     // loops through 5 times 
     // declares winner at the end
 function game() {
