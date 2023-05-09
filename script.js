@@ -114,11 +114,6 @@ function removeHoverGlow(e) {
     }
 }
 
-function shoot() {
-
-}
-
-
 // Removes glow from rock button when another button is pressed
 function removeRockGlow () {
     const rockGlowRemove = document.querySelector('.fist');
@@ -138,10 +133,13 @@ function removeScissorsGlow () {
 }
 
 // Add glow to buttons when clicked
+let rockIsClicked = false;
 function addClickedGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.toggle('clicked');
+        glow.setAttribute('id', 'green');
+        rockIsClicked = true;
         removePaperGlow();
         removeScissorsGlow();
     }
@@ -174,6 +172,14 @@ function shootClickGrow() {
     const playButton = document.querySelector('.play-button');
     playButton.classList.remove('play-clicked');
 }
+
+function shoot() {
+    if (rockIsClicked == true) {
+        playRound('rock', getComputerChoice());
+        rockIsClicked = false;
+    }
+}
+
 
 // Makes the buttons glow when mouse is over the button
 const glowFistHover = document.querySelector('.fist');
@@ -232,6 +238,8 @@ shootShrink.addEventListener('mousedown', shootClickShrink);
 const shootGrow = document.querySelector('.play-button');
 shootGrow.addEventListener('mouseup', shootClickGrow);
 
+const readyShoot = document.querySelector('.play-button');
+readyShoot.addEventListener('click', shoot);
 
 // TODO: for the play button, try a function that returns the id of the button with the clicked class
 // TODO: Add box shadow to shoot button when hovered over
