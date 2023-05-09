@@ -64,19 +64,19 @@ function game() {
 }
 
 // Plays one round of rock paper scissors
-function play(e) {
-    if (e.target.id === "rock") {
-        playRound("rock", getComputerChoice());
-    }
-    else if (e.target.id ==="paper") {
-        playRound("paper", getComputerChoice());
-    }
-    else {
-        playRound("scissors", getComputerChoice());
-    }
-}
+//function play(e) {
+  //  if (e.target.id === "rock") {
+    //    playRound("rock", getComputerChoice());
+    //}
+    //else if (e.target.id ==="paper") {
+      //  playRound("paper", getComputerChoice());
+    //}
+    //else {
+      //  playRound("scissors", getComputerChoice());
+    //}
+//}
 
-// Adds class to make buttons glow with box shadow
+// Adds class to make buttons glow with box shadow when mouse hovers over them
 function addHoverGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
@@ -113,6 +113,11 @@ function removeHoverGlow(e) {
         return;
     }
 }
+
+function shoot() {
+
+}
+
 
 // Removes glow from rock button when another button is pressed
 function removeRockGlow () {
