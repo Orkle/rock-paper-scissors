@@ -135,18 +135,24 @@ function addClickedGlow(e) {
         removePaperGlow();
         removeScissorsGlow();
         rockIsClicked = true;
+        paperIsClicked = false;
+        scissorsIsClicked = false;
     } else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
         glow.classList.toggle('clicked');
         removeRockGlow();
         removeScissorsGlow();
         paperIsClicked = true;
+        rockIsClicked = false;
+        scissorsIsClicked = false;
     } else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
         glow.classList.toggle('clicked');
         removeRockGlow();
         removePaperGlow();
         scissorsIsClicked = true;
+        rockIsClicked = false;
+        paperIsClicked = false;
     } else {
         return;
     }
@@ -167,9 +173,6 @@ function shootClickGrow() {
 
 // Plays a round
 function shoot() {
-    if (paperIsClicked == true || scissorsIsClicked == true) {
-        rockIsClicked = false;
-    }
     if (rockIsClicked == true) {
         playRound('rock', getComputerChoice());
         rockIsClicked = false;
@@ -183,7 +186,7 @@ function shoot() {
 }
 
 
-// Makes the buttons glow when mouse is over the button
+// Makes the buttons glow when mouse is hovering over the button
 const glowFistHover = document.querySelector('.fist');
 glowFistHover.addEventListener('mouseover', addHoverGlow);
 
