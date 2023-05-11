@@ -64,17 +64,17 @@ function game() {
 }
 
 // Plays one round of rock paper scissors
-//function play(e) {
-  //  if (e.target.id === "rock") {
-    //    playRound("rock", getComputerChoice());
-    //}
-    //else if (e.target.id ==="paper") {
-      //  playRound("paper", getComputerChoice());
-    //}
-    //else {
-      //  playRound("scissors", getComputerChoice());
-    //}
-//}
+function play(e) {
+    if (e.target.id === "rock") {
+        playRound("rock", getComputerChoice());
+    }
+    else if (e.target.id ==="paper") {
+        playRound("paper", getComputerChoice());
+    }
+    else {
+        playRound("scissors", getComputerChoice());
+    }
+}
 
 // Adds class to make buttons glow with box shadow when mouse hovers over them
 function addHoverGlow(e) {
@@ -115,45 +115,48 @@ function removeHoverGlow(e) {
 }
 
 // Removes glow from rock button when another button is pressed
-function removeRockGlow () {
+function removeRockGlow() {
     const rockGlowRemove = document.querySelector('.fist');
     rockGlowRemove.classList.remove('clicked');
 }
 
 // Removes glow from paper button when another button is pressed
-function removePaperGlow () {
+function removePaperGlow() {
     const paperGlowRemove = document.querySelector('.sheet');
     paperGlowRemove.classList.remove('clicked');
 }
 
 // Removes glow from scissors button when another button is pressed
-function removeScissorsGlow () {
+function removeScissorsGlow() {
     const scissorsGlowRemove = document.querySelector('.slice');
     scissorsGlowRemove.classList.remove('clicked');
 }
 
 // Add glow to buttons when clicked
 let rockIsClicked = false;
+let paperIsClicked = false;
+let scissorsIsClicked = false;
 function addClickedGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.toggle('clicked');
-        glow.setAttribute('id', 'green');
-        rockIsClicked = true;
         removePaperGlow();
         removeScissorsGlow();
+        rockIsClicked = true;
     }
     else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
         glow.classList.toggle('clicked');
         removeRockGlow();
-        removeScissorsGlow()
+        removeScissorsGlow();
+        paperIsClicked = true;
     }
     else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
         glow.classList.toggle('clicked');
         removeRockGlow();
         removePaperGlow();
+        scissorsIsClicked = true;
     }
     else {
         return;
@@ -173,10 +176,17 @@ function shootClickGrow() {
     playButton.classList.remove('play-clicked');
 }
 
+// Plays a round
 function shoot() {
     if (rockIsClicked == true) {
         playRound('rock', getComputerChoice());
         rockIsClicked = false;
+    } else if (paperIsClicked == true) {
+        playRound('paper', getComputerChoice());
+        paperIsClicked = false;
+    } else if (scissorsIsClicked == true) {
+        playRound('scissors', getComputerChoice());
+        scissorsIsClicked = false;
     }
 }
 
