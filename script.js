@@ -67,11 +67,9 @@ function game() {
 function play(e) {
     if (e.target.id === "rock") {
         playRound("rock", getComputerChoice());
-    }
-    else if (e.target.id ==="paper") {
+    } else if (e.target.id ==="paper") {
         playRound("paper", getComputerChoice());
-    }
-    else {
+    } else {
         playRound("scissors", getComputerChoice());
     }
 }
@@ -81,16 +79,13 @@ function addHoverGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.add('hover');
-    }
-    else if (e.target.id == "paper") {
+    } else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
         glow.classList.add('hover');
-    }
-    else if (e.target.id == "scissors") {
+    } else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
         glow.classList.add('hover');
-    }
-    else {
+    } else {
         return;
     }
 }
@@ -100,16 +95,13 @@ function removeHoverGlow(e) {
     if (e.target.id === "rock") {
         const glowRemove = document.querySelector('.fist');
         glowRemove.classList.remove('hover');
-    }
-    else if (e.target.id === "paper") {
+    } else if (e.target.id === "paper") {
         const glowRemove = document.querySelector('.sheet');
         glowRemove.classList.remove('hover');
-    }
-    else if (e.target.id === "scissors") {
+    } else if (e.target.id === "scissors") {
         const glowRemove = document.querySelector('.slice');
         glowRemove.classList.remove('hover');
-    }
-    else {
+    } else {
         return;
     }
 }
@@ -143,22 +135,19 @@ function addClickedGlow(e) {
         removePaperGlow();
         removeScissorsGlow();
         rockIsClicked = true;
-    }
-    else if (e.target.id == "paper") {
+    } else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
         glow.classList.toggle('clicked');
         removeRockGlow();
         removeScissorsGlow();
         paperIsClicked = true;
-    }
-    else if (e.target.id == "scissors") {
+    } else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
         glow.classList.toggle('clicked');
         removeRockGlow();
         removePaperGlow();
         scissorsIsClicked = true;
-    }
-    else {
+    } else {
         return;
     }
     console.log(e);
@@ -178,6 +167,9 @@ function shootClickGrow() {
 
 // Plays a round
 function shoot() {
+    if (paperIsClicked == true || scissorsIsClicked == true) {
+        rockIsClicked = false;
+    }
     if (rockIsClicked == true) {
         playRound('rock', getComputerChoice());
         rockIsClicked = false;
