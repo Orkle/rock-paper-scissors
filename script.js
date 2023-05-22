@@ -132,6 +132,7 @@ function addClickedGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.toggle('clicked');
+        console.log(e.target);
         removePaperGlow();
         removeScissorsGlow();
         rockIsClicked = true;
@@ -174,12 +175,27 @@ function shootClickGrow() {
 // Plays a round
 function shoot() {
     if (rockIsClicked == true) {
+        const clicked = document.querySelector('.fist');
+        if (!clicked.classList.contains('clicked')) {
+            rockIsClicked = false;
+            return;
+        }
         playRound('rock', getComputerChoice());
         rockIsClicked = false;
     } else if (paperIsClicked == true) {
+        const clicked = document.querySelector('.sheet');
+        if (!clicked.classList.contains('clicked')) {
+            rockIsClicked = false;
+            return;
+        }
         playRound('paper', getComputerChoice());
         paperIsClicked = false;
     } else if (scissorsIsClicked == true) {
+        const clicked = document.querySelector('.slice');
+        if (!clicked.classList.contains('clicked')) {
+            rockIsClicked = false;
+            return;
+        }
         playRound('scissors', getComputerChoice());
         scissorsIsClicked = false;
     }
