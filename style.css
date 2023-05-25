@@ -48,7 +48,17 @@ body {
   flex-direction: column;
 }
 
+.story {
+  display: flex;
+  flex-direction: column;
+  font-family: "JMH Typewriter", Arial, Helvetica;
+  font-size: 20px;
+  color: white;
+}
+
 .introduction {
+  display: flex;
+  flex-direction: column;
   margin-top: 50px;
   font-family: "JMH Typewriter", Arial, Helvetica;
   font-size: 20px;
