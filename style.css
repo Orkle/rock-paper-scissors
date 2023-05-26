@@ -45,15 +45,9 @@ body {
 
 .intro {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-}
-
-.story {
-  display: flex;
-  flex-direction: column;
-  font-family: "JMH Typewriter", Arial, Helvetica;
-  font-size: 20px;
-  color: white;
+  padding: 10px 100px;
 }
 
 .introduction {
@@ -127,4 +121,25 @@ body {
 
 .play-clicked {
   transform: scale(0.95);
+}
+
+.scoreboard {
+  margin-top: 30px;
+  padding: 10px;
+  border-style: solid;
+  border-color: whitesmoke;
+  border-width: 4px;
+  border-radius: 15px;
+}
+
+.player-score {
+  font-family: "JMH Typewriter", Arial, Helvetica;
+  font-size: 20px;
+  color: white;
+}
+
+.computer-score {
+  font-family: "JMH Typewriter", Arial, Helvetica;
+  font-size: 20px;
+  color: white;
 }
