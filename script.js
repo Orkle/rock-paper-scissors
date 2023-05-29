@@ -7,14 +7,17 @@ function getComputerChoice () {
 
 // Plays one round, declares the winner with explanation
     // takes player and computer choices as parameters
+let pScore = 0;
+let cScore = 0;
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
-        console.log(`You win!\nPlayer: ${playerSelection}\n   beats\nComputer: ${computerSelection}`);
+        pScore += 1;
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
-        console.log(`You lose!\nComputer: ${computerSelection}\n   beats\nPlayer: ${playerSelection}`);
+        cScore += 1;
+        paraComp.textContent - cScore;
         return 0;
     } else if (playerSelection === computerSelection) {
         console.log("It's a tie... Try again!");
@@ -215,6 +218,20 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 // Plays a round
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
+
+
+
+const playerScore = document.querySelector('.player-score');
+const paraPlayer = document.createElement('p');
+paraPlayer.textContent = pScore;
+
+playerScore.appendChild(paraPlayer);
+
+const compScore = document.querySelector('.computer-score');
+const paraComp = document.createElement('p');
+paraComp.textContent = cScore;
+
+compScore.appendChild(paraComp);
 
 // TODO: for the play button, try a function that returns the id of the button with the clicked class
 // TODO: Add box shadow to shoot button when hovered over
