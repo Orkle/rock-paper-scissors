@@ -5,11 +5,6 @@ function getComputerChoice () {
     return choice[randomChoiceNum];
 }
 
-// Prompts user for their choice of rock, paper, or scissors
-function getPlayerChoice () {
-    // return prompt("What do you wish to play? Rock, paper, or scissors: ").toLowerCase()
-}
-
 // Plays one round, declares the winner with explanation
     // takes player and computer choices as parameters
 function playRound(playerSelection, computerSelection) {
@@ -29,48 +24,6 @@ function playRound(playerSelection, computerSelection) {
         console.log("Please pick a valid option.");
         //alert("Please pick a valid option.")
         return null;
-    }
-}
-
-// Plays five rounds
-    // loops through 5 times 
-    // declares winner at the end
-function game() {
-    let win = 0;
-    let lose = 0;
-    for (let i = 0; i < 5; i++) {
-        let winLose = playRound(getPlayerChoice(), getComputerChoice());
-        if (winLose === 1) {
-            win += 1;
-        } else if (winLose === 0) {
-            lose += 1;
-        } else if (winLose === null) {
-            i -= 1;
-        } else {
-            win += 0;
-            lose += 0;
-            i -= 1;
-        }
-    }
-    if (win > lose) {
-        console.log(`You win! Score: ${win} to ${lose}`);
-        alert(`You win! Score: ${win} to ${lose}`);
-    } else if (win < lose) {
-        console.log(`You lose... Score: ${win} to ${lose}`);
-        alert(`You lose... Score: ${win} to ${lose}`);
-    } else {
-        console.log("Tie Game!")
-    }
-}
-
-// Plays one round of rock paper scissors
-function play(e) {
-    if (e.target.id === "rock") {
-        playRound("rock", getComputerChoice());
-    } else if (e.target.id ==="paper") {
-        playRound("paper", getComputerChoice());
-    } else {
-        playRound("scissors", getComputerChoice());
     }
 }
 
@@ -259,6 +212,7 @@ shootShrink.addEventListener('mousedown', shootClickShrink);
 const shootGrow = document.querySelector('.play-button');
 shootGrow.addEventListener('mouseup', shootClickGrow);
 
+// Plays a round
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
