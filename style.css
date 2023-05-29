@@ -148,7 +148,12 @@ body {
 }
 
 .computer-score {
+  display: flex;
   font-family: "JMH Typewriter", Arial, Helvetica;
   font-size: 20px;
   color: white;
+}
+
+.god {
+  padding-right: 10px;
 }
