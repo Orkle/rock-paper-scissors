@@ -13,11 +13,12 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
         pScore += 1;
+        console.log(pScore);
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         cScore += 1;
-        paraComp.textContent - cScore;
+        console.log(cScore);
         return 0;
     } else if (playerSelection === computerSelection) {
         console.log("It's a tie... Try again!");
@@ -130,6 +131,9 @@ function shootClickGrow() {
 
 // Plays a round
 function shoot() {
+    removeRockGlow()
+    removePaperGlow()
+    removeScissorsGlow()
     if (rockIsClicked == true) {
         const clicked = document.querySelector('.fist');
         if (!clicked.classList.contains('clicked')) {
