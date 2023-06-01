@@ -13,16 +13,18 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
         pScore += 1;
+        console.log('hi');
         console.log(pScore);
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         cScore += 1;
+        console.log('hi');
         console.log(cScore);
         return 0;
     } else if (playerSelection === computerSelection) {
         console.log("It's a tie... Try again!");
-        //alert("It's a tie... Try again!");
+        console.log('hi');
         return 2;
     } else {
         console.log("Please pick a valid option.");
@@ -131,9 +133,6 @@ function shootClickGrow() {
 
 // Plays a round
 function shoot() {
-    removeRockGlow()
-    removePaperGlow()
-    removeScissorsGlow()
     if (rockIsClicked == true) {
         const clicked = document.querySelector('.fist');
         if (!clicked.classList.contains('clicked')) {
@@ -159,6 +158,9 @@ function shoot() {
         playRound('scissors', getComputerChoice());
         scissorsIsClicked = false;
     }
+    removeRockGlow();
+    removePaperGlow();
+    removeScissorsGlow();
 }
 
 
