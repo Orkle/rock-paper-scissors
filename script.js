@@ -163,15 +163,27 @@ function shoot() {
     setTimeout(removeScissorsGlow, 500);
 
     changeScore();
+    declareWinner();
 }
 
 // Replaces the score aka the p element 
-function changeScore () {
+function changeScore() {
     const pPara = document.getElementById('you-score');
     pPara.textContent = pScore;
 
     const cPara = document.getElementById('god-score');
     cPara.textContent = cScore;
+}
+
+function declareWinner() {
+    if (pScore === 5) {
+        const playerWins = document.getElementById('winner');
+        playerWins.textContent = "You win!!!!! You saved us!! All of humanity is in your debt...";
+    }
+    if (cScore === 5) {
+        const compWins = document.getElementById('winner')
+        compWins.textContent = "God wins... He has decided to reset humanity. Thanks for nothing, it was nice knowing you..."
+    }
 }
 
 
