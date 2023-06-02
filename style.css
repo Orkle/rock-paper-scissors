@@ -45,7 +45,7 @@ body {
 .buttons {
   display: flex;
   justify-content: space-around;
-  margin: 50px;
+  margin: 30px;
   padding: 30px 80px;
   border-style: solid;
   border-color: whitesmoke;
@@ -66,14 +66,14 @@ body {
   font-size: 20px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: white;
 }
 
 .play-button {
-  width: 250px;
-  height: 125px;
-  border-radius: 50%;
+  width: 375px;
+  height: 94px;
+  border-radius: 25px;
   box-shadow: 0 0 1rem grey;
   opacity: 100%;
 }
