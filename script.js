@@ -158,9 +158,9 @@ function shoot() {
         playRound('scissors', getComputerChoice());
         scissorsIsClicked = false;
     }
-    removeRockGlow();
-    removePaperGlow();
-    removeScissorsGlow();
+    setTimeout(removeRockGlow, 500);
+    setTimeout(removePaperGlow, 500);
+    setTimeout(removeScissorsGlow, 500);
 }
 
 
