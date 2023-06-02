@@ -13,13 +13,13 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
         pScore += 1;
-        console.log('hi');
+        console.log('you ');
         console.log(pScore);
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         cScore += 1;
-        console.log('hi');
+        console.log('god ');
         console.log(cScore);
         return 0;
     } else if (playerSelection === computerSelection) {
@@ -161,6 +161,17 @@ function shoot() {
     setTimeout(removeRockGlow, 500);
     setTimeout(removePaperGlow, 500);
     setTimeout(removeScissorsGlow, 500);
+
+    changeScore();
+}
+
+// Replaces the score aka the p element 
+function changeScore () {
+    const pPara = document.getElementById('you-score');
+    pPara.textContent = pScore;
+
+    const cPara = document.getElementById('god-score');
+    cPara.textContent = cScore;
 }
 
 
@@ -227,18 +238,19 @@ readyShoot.addEventListener('click', shoot);
 
 
 
-const playerScore = document.querySelector('.player-score');
-const paraPlayer = document.createElement('p');
-paraPlayer.textContent = pScore;
+// const playerScore = document.querySelector('.player-score');
+// const paraPlayer = document.createElement('p');
+// paraPlayer.textContent = pScore;
 
-playerScore.appendChild(paraPlayer);
+// playerScore.appendChild(paraPlayer);
 
-const compScore = document.querySelector('.computer-score');
-const paraComp = document.createElement('p');
-paraComp.textContent = cScore;
+// const compScore = document.querySelector('.computer-score');
+// const paraComp = document.createElement('p');
+// paraComp.textContent = cScore;
 
-compScore.appendChild(paraComp);
+// compScore.appendChild(paraComp);
 
-// TODO: for the play button, try a function that returns the id of the button with the clicked class
 // TODO: Add box shadow to shoot button when hovered over
 // TODO: Decrease shoot button opacity to 50% until a button has been selected
+// TODO: Change scoreboard border to green or red depending on the outcome of the round
+// TODO: Change mouse to finger pointer when over a button
