@@ -1,8 +1,26 @@
 // Chooses the computer play randomly from an array
-function getComputerChoice () {
+function getComputerChoice() {
     let choice = ["rock", "paper", "scissors"];
     let randomChoiceNum = Math.floor(Math.random()*choice.length);
     return choice[randomChoiceNum];
+}
+
+function winBorder() {
+    const winner = document.querySelector(".scoreboard");
+    winner.classList.remove('scoreboard-lose');
+    winner.classList.add('scoreboard-win');
+}
+
+function loseBorder() {
+    const loser = document.querySelector(".scoreboard");
+    loser.classList.remove('scoreboard-win');
+    loser.classList.add('scoreboard-lose');
+}
+
+function resetBorder() {
+    const border = document.querySelector('.scoreboard');
+    border.classList.remove('scoreboard-win');
+    border.classList.remove('scoreboard-lose');
 }
 
 // Plays one round, declares the winner with explanation
@@ -14,16 +32,28 @@ function playRound(playerSelection, computerSelection) {
         pScore += 1;
         const tie = document.getElementById('text-area');
         tie.textContent = "Plus one for you! Let's go!!"
+        winBorder();
+        setTimeout(resetBorder, 1000);
+        if (pScore != 5) {
+            setTimeout(resetText, 1000);
+        }
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         cScore += 1;
         const tie = document.getElementById('text-area');
         tie.textContent = "God scored that one. Think carefully!"
+        loseBorder();
+        setTimeout(resetBorder, 1000);
+        if (cScore != 5) {
+            setTimeout(resetText, 1000);
+        }
         return 0;
     } else if (playerSelection === computerSelection) {
         const tie = document.getElementById('text-area');
         tie.textContent = "It's a tie! Try again..."
+        resetBorder();
+        setTimeout(resetText, 1000);
         return 2;
     } else {
         return null;
@@ -86,14 +116,19 @@ function removeScissorsGlow() {
     scissorsGlowRemove.classList.remove('clicked');
 }
 
-function playButtonReady () {
+function playButtonReady() {
     const selected = document.querySelector('.play-button');
     selected.classList.remove('unselected');
 }
 
-function playButtonUnready () {
+function playButtonUnready() {
     const selected = document.querySelector('.play-button');
     selected.classList.add('unselected');
+}
+
+function resetText() {
+    const para = document.querySelector('.rps');
+    para.textContent = "Rock, Paper, Scissors....."
 }
 
 // Add glow to buttons when clicked
@@ -185,10 +220,10 @@ function shoot() {
         playRound('scissors', getComputerChoice());
         scissorsIsClicked = false;
     }
-    setTimeout(removeRockGlow, 500);
-    setTimeout(removePaperGlow, 500);
-    setTimeout(removeScissorsGlow, 500);
-    setTimeout(playButtonUnready, 500);
+    setTimeout(removeRockGlow, 1000);
+    setTimeout(removePaperGlow, 1000);
+    setTimeout(removeScissorsGlow, 1000);
+    setTimeout(playButtonUnready, 1000);
 
     changeScore();
     declareWinner();
