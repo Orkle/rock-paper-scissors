@@ -179,13 +179,14 @@ function declareWinner() {
     if (pScore === 5) {
         const playerWins = document.getElementById('winner');
         playerWins.textContent = "You win!!!!! You saved us!! All of humanity is in your debt...";
+        readyShoot.removeEventListener('click', shoot);
     }
     if (cScore === 5) {
         const compWins = document.getElementById('winner')
         compWins.textContent = "God wins... He has decided to reset humanity. Thanks for nothing, it was nice knowing you..."
+        readyShoot.removeEventListener('click', shoot);
     }
 }
-
 
 // Makes the buttons glow when mouse is hovering over the button
 const glowFistHover = document.querySelector('.fist');
@@ -230,12 +231,6 @@ noGlowSheetMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 const noGlowSliceMouseLeave = document.querySelector('.slice');
 noGlowSliceMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
-
-// Plays a round when the buttons are clicked
-// const buttons = document.querySelectorAll('.btn');
-// buttons.forEach(btn => btn.addEventListener('click', play));
-
-
 // Shrinks shoot button when clicked down
 const shootShrink = document.querySelector('.play-button');
 shootShrink.addEventListener('mousedown', shootClickShrink);
@@ -262,7 +257,9 @@ readyShoot.addEventListener('click', shoot);
 
 // compScore.appendChild(paraComp);
 
+// TODO: End game when someone reaches 5
 // TODO: Add box shadow to shoot button when hovered over
 // TODO: Decrease shoot button opacity to 50% until a button has been selected
 // TODO: Change scoreboard border to green or red depending on the outcome of the round
 // TODO: Change mouse to finger pointer when over a button
+// TODO: Try animating the text
