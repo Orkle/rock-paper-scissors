@@ -37,6 +37,9 @@ function addHoverGlow(e) {
     } else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
         glow.classList.add('hover');
+    } else if (e.target.id === "shoot") {
+        const glow = document.querySelector('.play-button');
+        glow.classList.add('hover-shoot');
     } else {
         return;
     }
@@ -53,6 +56,9 @@ function removeHoverGlow(e) {
     } else if (e.target.id === "scissors") {
         const glowRemove = document.querySelector('.slice');
         glowRemove.classList.remove('hover');
+    } else if (e.target.id === "shoot") {
+        const glowRemove = document.querySelector('.play-button');
+        glowRemove.classList.remove('hover-shoot');
     } else {
         return;
     }
@@ -191,6 +197,9 @@ glowSheetHover.addEventListener('mouseover', addHoverGlow);
 const glowSliceHover = document.querySelector('.slice');
 glowSliceHover.addEventListener('mouseover', addHoverGlow);
 
+const shootButtonHover = document.querySelector('.play-button');
+shootButtonHover.addEventListener('mouseover', addHoverGlow);
+
 // Makes buttons glow when clicked
 const glowFistClicked = document.querySelector('.fist');
 glowFistClicked.addEventListener('mousedown', addClickedGlow);
@@ -221,6 +230,9 @@ noGlowSheetMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 const noGlowSliceMouseLeave = document.querySelector('.slice');
 noGlowSliceMouseLeave.addEventListener('mouseleave', removeHoverGlow);
 
+const noGlowPlayButtonLeave = document.querySelector('.play-button');
+noGlowPlayButtonLeave.addEventListener('mouseleave', removeHoverGlow);
+
 // Shrinks shoot button when clicked down
 const shootShrink = document.querySelector('.play-button');
 shootShrink.addEventListener('mousedown', shootClickShrink);
@@ -236,5 +248,4 @@ readyShoot.addEventListener('click', shoot);
 // TODO: Add box shadow to shoot button when hovered over
 // TODO: Decrease shoot button opacity to 50% until a button has been selected
 // TODO: Change scoreboard border to green or red depending on the outcome of the round
-// TODO: Change mouse to finger pointer when over a button
 // TODO: Try animating the text
