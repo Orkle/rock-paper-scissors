@@ -6,29 +6,22 @@ function getComputerChoice () {
 }
 
 // Plays one round, declares the winner with explanation
-    // takes player and computer choices as parameters
 let pScore = 0;
 let cScore = 0;
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
         pScore += 1;
-        console.log('you ');
-        console.log(pScore);
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         cScore += 1;
-        console.log('god ');
-        console.log(cScore);
         return 0;
     } else if (playerSelection === computerSelection) {
-        console.log("It's a tie... Try again!");
+        alert("It's a tie... Try again!");
         console.log('hi');
         return 2;
     } else {
-        console.log("Please pick a valid option.");
-        //alert("Please pick a valid option.")
         return null;
     }
 }
@@ -198,7 +191,6 @@ glowSheetHover.addEventListener('mouseover', addHoverGlow);
 const glowSliceHover = document.querySelector('.slice');
 glowSliceHover.addEventListener('mouseover', addHoverGlow);
 
-
 // Makes buttons glow when clicked
 const glowFistClicked = document.querySelector('.fist');
 glowFistClicked.addEventListener('mousedown', addClickedGlow);
@@ -209,7 +201,6 @@ glowSheetClicked.addEventListener('mousedown', addClickedGlow);
 const glowSliceClicked = document.querySelector('.slice');
 glowSliceClicked.addEventListener('mousedown', addClickedGlow);
 
-
 // Removes glow from buttons when mouse is released
 const noGlowFistMouseUp = document.querySelector('.fist');
 noGlowFistMouseUp.addEventListener('mouseup', removeHoverGlow);
@@ -219,7 +210,6 @@ noGlowSheetMouseUp.addEventListener('mouseup', removeHoverGlow);
 
 const noGlowSliceMouseUp = document.querySelector('.slice');
 noGlowSliceMouseUp.addEventListener('mouseup', removeHoverGlow);
-
 
 // Removes glow from buttons when mouse isn't on the object
 const noGlowFistMouseLeave = document.querySelector('.fist');
@@ -243,21 +233,6 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
-
-
-// const playerScore = document.querySelector('.player-score');
-// const paraPlayer = document.createElement('p');
-// paraPlayer.textContent = pScore;
-
-// playerScore.appendChild(paraPlayer);
-
-// const compScore = document.querySelector('.computer-score');
-// const paraComp = document.createElement('p');
-// paraComp.textContent = cScore;
-
-// compScore.appendChild(paraComp);
-
-// TODO: End game when someone reaches 5
 // TODO: Add box shadow to shoot button when hovered over
 // TODO: Decrease shoot button opacity to 50% until a button has been selected
 // TODO: Change scoreboard border to green or red depending on the outcome of the round
