@@ -12,14 +12,18 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
         pScore += 1;
+        const tie = document.getElementById('text-area');
+        tie.textContent = "Plus one for you! Let's go!!"
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         cScore += 1;
+        const tie = document.getElementById('text-area');
+        tie.textContent = "God scored that one. Think carefully!"
         return 0;
     } else if (playerSelection === computerSelection) {
-        alert("It's a tie... Try again!");
-        console.log('hi');
+        const tie = document.getElementById('text-area');
+        tie.textContent = "It's a tie! Try again..."
         return 2;
     } else {
         return null;
@@ -100,7 +104,11 @@ function addClickedGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.toggle('clicked');
-        setTimeout(playButtonReady, 250);
+        if (!glow.classList.contains('clicked')) {
+            setTimeout(playButtonUnready, 250);
+        } else {
+            setTimeout(playButtonReady, 250);
+        }
         removePaperGlow();
         removeScissorsGlow();
         rockIsClicked = true;
@@ -109,7 +117,11 @@ function addClickedGlow(e) {
     } else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
         glow.classList.toggle('clicked');
-        setTimeout(playButtonReady, 250);
+        if (!glow.classList.contains('clicked')) {
+            setTimeout(playButtonUnready, 250);
+        } else {
+            setTimeout(playButtonReady, 250);
+        }
         removeRockGlow();
         removeScissorsGlow();
         paperIsClicked = true;
@@ -118,7 +130,11 @@ function addClickedGlow(e) {
     } else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
         glow.classList.toggle('clicked');
-        setTimeout(playButtonReady, 250);
+        if (!glow.classList.contains('clicked')) {
+            setTimeout(playButtonUnready, 250);
+        } else {
+            setTimeout(playButtonReady, 250);
+        }
         removeRockGlow();
         removePaperGlow();
         scissorsIsClicked = true;
@@ -261,7 +277,8 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
-// TODO: Decrease shoot button opacity to 50% until a button has been selected
 // TODO: Change scoreboard border to green or red depending on the outcome of the round
 // TODO: Add text snippets whenever the shoot button is pressed
 // TODO: Try animating the text
+
+// BUGS/TO FIX: Grey out play button when game is over, and disallow buttons being pressed
