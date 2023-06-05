@@ -127,6 +127,30 @@ body {
   border-radius: 15px;
 }
 
+.scoreboard-win {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 6px;
+  border-style: groove;
+  border-color: rgb(9, 161, 9);
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+.scoreboard-lose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 6px;
+  border-style: groove;
+  border-color: rgb(252, 3, 15);
+  border-width: 8px;
+  border-radius: 15px;
+}
+
 .player-score {
   display: flex;
   margin-bottom: 10px;
