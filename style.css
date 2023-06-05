@@ -61,7 +61,7 @@ body {
 }
 
 .rps {
-  display: flex;
+  text-align: center;
   font-family: "JMH Typewriter", Arial, Helvetica;
   font-size: 20px;
   align-items: center;
@@ -100,6 +100,10 @@ body {
 .hover-shoot {
   transform: scale(1.05);
   box-shadow: 0 0 1rem #042fee;
+}
+
+.unselected {
+  opacity: 0.5;
 }
 
 .clicked {
