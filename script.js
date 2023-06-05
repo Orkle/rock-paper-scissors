@@ -82,6 +82,16 @@ function removeScissorsGlow() {
     scissorsGlowRemove.classList.remove('clicked');
 }
 
+function playButtonReady () {
+    const selected = document.querySelector('.play-button');
+    selected.classList.remove('unselected');
+}
+
+function playButtonUnready () {
+    const selected = document.querySelector('.play-button');
+    selected.classList.add('unselected');
+}
+
 // Add glow to buttons when clicked
 let rockIsClicked = false;
 let paperIsClicked = false;
@@ -90,7 +100,7 @@ function addClickedGlow(e) {
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.toggle('clicked');
-        console.log(e.target);
+        setTimeout(playButtonReady, 250);
         removePaperGlow();
         removeScissorsGlow();
         rockIsClicked = true;
@@ -99,6 +109,7 @@ function addClickedGlow(e) {
     } else if (e.target.id == "paper") {
         const glow = document.querySelector('.sheet');
         glow.classList.toggle('clicked');
+        setTimeout(playButtonReady, 250);
         removeRockGlow();
         removeScissorsGlow();
         paperIsClicked = true;
@@ -107,6 +118,7 @@ function addClickedGlow(e) {
     } else if (e.target.id == "scissors") {
         const glow = document.querySelector('.slice');
         glow.classList.toggle('clicked');
+        setTimeout(playButtonReady, 250);
         removeRockGlow();
         removePaperGlow();
         scissorsIsClicked = true;
@@ -160,6 +172,7 @@ function shoot() {
     setTimeout(removeRockGlow, 500);
     setTimeout(removePaperGlow, 500);
     setTimeout(removeScissorsGlow, 500);
+    setTimeout(playButtonUnready, 500);
 
     changeScore();
     declareWinner();
@@ -176,12 +189,12 @@ function changeScore() {
 
 function declareWinner() {
     if (pScore === 5) {
-        const playerWins = document.getElementById('winner');
+        const playerWins = document.getElementById('text-area');
         playerWins.textContent = "You win!!!!! You saved us!! All of humanity is in your debt...";
         readyShoot.removeEventListener('click', shoot);
     }
     if (cScore === 5) {
-        const compWins = document.getElementById('winner')
+        const compWins = document.getElementById('text-area');
         compWins.textContent = "God wins... He has decided to reset humanity. Thanks for nothing, it was nice knowing you..."
         readyShoot.removeEventListener('click', shoot);
     }
@@ -197,8 +210,11 @@ glowSheetHover.addEventListener('mouseover', addHoverGlow);
 const glowSliceHover = document.querySelector('.slice');
 glowSliceHover.addEventListener('mouseover', addHoverGlow);
 
+
 const shootButtonHover = document.querySelector('.play-button');
 shootButtonHover.addEventListener('mouseover', addHoverGlow);
+
+
 
 // Makes buttons glow when clicked
 const glowFistClicked = document.querySelector('.fist');
@@ -245,7 +261,7 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
-// TODO: Add box shadow to shoot button when hovered over
 // TODO: Decrease shoot button opacity to 50% until a button has been selected
 // TODO: Change scoreboard border to green or red depending on the outcome of the round
+// TODO: Add text snippets whenever the shoot button is pressed
 // TODO: Try animating the text
