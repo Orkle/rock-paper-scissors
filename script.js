@@ -408,5 +408,3 @@ resetDown.addEventListener('mousedown', resetDownClick);
 
 const resetUp = document.querySelector('.reset');
 resetUp.addEventListener('mouseup', resetGame);
-
-// TODO: Try animating the text
