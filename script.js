@@ -91,7 +91,7 @@ function playRound(playerSelection, computerSelection) {
         winBorder();
         if (pScore != 5) {
             setTimeout(resetBorder, 1000);
-            setTimeout(resetText, 1500);
+            setTimeout(resetText, 2200);
         }
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
@@ -110,7 +110,7 @@ function playRound(playerSelection, computerSelection) {
         loseBorder();
         if (cScore != 5) {
             setTimeout(resetBorder, 1000);
-            setTimeout(resetText, 1500);
+            setTimeout(resetText, 2200);
         }
         return 0;
     } else if (playerSelection === computerSelection) {
