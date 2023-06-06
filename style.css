@@ -53,6 +53,28 @@ body {
   border-radius: 15px;
 }
 
+.buttons-win {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 30px 80px;
+  border-style: solid;
+  border-color: rgb(9, 161, 9);
+  border-width: 4px;
+  border-radius: 15px;
+}
+
+.buttons-lose {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 30px 80px;
+  border-style: solid;
+  border-color: rgb(252, 3, 15);
+  border-width: 4px;
+  border-radius: 15px;
+}
+
 .btn {
   display: flex;
   justify-content: center;
