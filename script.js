@@ -5,18 +5,21 @@ function getComputerChoice() {
     return choice[randomChoiceNum];
 }
 
+// Turns scoreboard border green when player wins a round
 function winBorder() {
     const winner = document.querySelector(".scoreboard");
     winner.classList.remove('scoreboard-lose');
     winner.classList.add('scoreboard-win');
 }
 
+// Turns scoreboard border red when player loses a round
 function loseBorder() {
     const loser = document.querySelector(".scoreboard");
     loser.classList.remove('scoreboard-win');
     loser.classList.add('scoreboard-lose');
 }
 
+// Turns scoreboard border white
 function resetBorder() {
     const border = document.querySelector('.scoreboard');
     border.classList.remove('scoreboard-win');
@@ -116,16 +119,19 @@ function removeScissorsGlow() {
     scissorsGlowRemove.classList.remove('clicked');
 }
 
+// Turns shoot button opacity to 100% when ready
 function playButtonReady() {
     const selected = document.querySelector('.play-button');
     selected.classList.remove('unselected');
 }
 
+// Turns shoot button opacity to 50% when not ready
 function playButtonUnready() {
     const selected = document.querySelector('.play-button');
     selected.classList.add('unselected');
 }
 
+// Resets text above scoreboard to default
 function resetText() {
     const para = document.querySelector('.rps');
     para.textContent = "Rock, Paper, Scissors....."
@@ -238,6 +244,7 @@ function changeScore() {
     cPara.textContent = cScore;
 }
 
+// Declares a winner when someone reaches 5 rounds won
 function declareWinner() {
     if (pScore === 5) {
         const playerWins = document.getElementById('text-area');
@@ -312,8 +319,6 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
-// TODO: Change scoreboard border to green or red depending on the outcome of the round
-// TODO: Add text snippets whenever the shoot button is pressed
 // TODO: Try animating the text
 
 // BUGS/TO FIX: Grey out play button when game is over, and disallow buttons being pressed
