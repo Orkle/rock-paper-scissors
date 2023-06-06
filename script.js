@@ -42,6 +42,10 @@ function resetBorder() {
 let pScore = 0;
 let cScore = 0;
 function playRound(playerSelection, computerSelection) {
+    if (pScore === 5 || cScore === 5) {
+        const shootButton = document.querySelector('.play-button');
+        shootButton.classList.add('unselected');
+    }
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
         pScore += 1;
@@ -77,6 +81,9 @@ function playRound(playerSelection, computerSelection) {
 
 // Adds class to make buttons glow with box shadow when mouse hovers over them
 function addHoverGlow(e) {
+    if (pScore === 5 || cScore === 5) {
+        return;
+    }
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.add('hover');
@@ -336,8 +343,7 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
-// TODO: Stop the play button mouse over effect when at 50% opacity
+// TODO: Disallow buttons being pressed when game is over
+// TODO: Add reset button
 // TODO: Add more text snippets
 // TODO: Try animating the text
-
-// BUGS/TO FIX: Grey out play button when game is over, and disallow buttons being pressed
