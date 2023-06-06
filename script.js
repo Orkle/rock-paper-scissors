@@ -48,8 +48,8 @@ function playRound(playerSelection, computerSelection) {
         const tie = document.getElementById('text-area');
         tie.textContent = "Plus one for you! Let's go!!"
         winBorder();
-        setTimeout(resetBorder, 1000);
         if (pScore != 5) {
+            setTimeout(resetBorder, 1000);
             setTimeout(resetText, 1500);
         }
         return 1;
@@ -59,8 +59,8 @@ function playRound(playerSelection, computerSelection) {
         const tie = document.getElementById('text-area');
         tie.textContent = "God scored that one. Think carefully!"
         loseBorder();
-        setTimeout(resetBorder, 1000);
         if (cScore != 5) {
+            setTimeout(resetBorder, 1000);
             setTimeout(resetText, 1500);
         }
         return 0;
@@ -88,7 +88,12 @@ function addHoverGlow(e) {
         glow.classList.add('hover');
     } else if (e.target.id === "shoot") {
         const glow = document.querySelector('.play-button');
-        glow.classList.add('hover-shoot');
+        const rock = document.querySelector('.fist');
+        const paper = document.querySelector('.sheet');
+        const scissors = document.querySelector('.slice');
+        if (rock.classList.contains('clicked') || paper.classList.contains('clicked') || scissors.classList.contains('clicked')) {
+            glow.classList.add('hover-shoot');
+        }
     } else {
         return;
     }
