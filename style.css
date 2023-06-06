@@ -1,6 +1,6 @@
 @font-face {
   font-family: "JMH Typewriter";
-  src: url(../../../landing-page/Landing-Page/Fonts/JMH\ Typewriter.ttf);
+  src: url(Fonts/JMH\ Typewriter.ttf);
 }
 
 body {
@@ -13,7 +13,6 @@ body {
 .banner {
   width: 999px;
   height: 300px;
-  border-radius: 15px;
 }
 
 .title {
