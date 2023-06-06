@@ -166,6 +166,9 @@ let rockIsClicked = false;
 let paperIsClicked = false;
 let scissorsIsClicked = false;
 function addClickedGlow(e) {
+    if (pScore === 5 || cScore === 5) {
+        return;
+    }
     if (e.target.id == "rock") {
         const glow = document.querySelector('.fist');
         glow.classList.toggle('clicked');
