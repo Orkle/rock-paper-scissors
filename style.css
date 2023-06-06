@@ -126,6 +126,7 @@ body {
 
 .unselected {
   opacity: 0.5;
+  cursor: default;
 }
 
 .clicked {
