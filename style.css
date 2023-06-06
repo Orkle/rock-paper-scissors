@@ -51,6 +51,7 @@ body {
   border-color: whitesmoke;
   border-width: 4px;
   border-radius: 15px;
+  cursor: default;
 }
 
 .buttons-win {
@@ -79,6 +80,7 @@ body {
   display: flex;
   justify-content: center;
   max-width: 200px;
+  cursor: default;
   /*box-shadow: 0 0 1rem #c8f0ca;*/
 }
 
@@ -117,6 +119,7 @@ body {
 .hover {
   transform: scale(1.2);
   box-shadow: inset 0 0 1rem #042fee;
+  cursor: pointer;
 }
 
 .hover-shoot {
