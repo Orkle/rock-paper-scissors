@@ -38,6 +38,35 @@ function resetBorder() {
     buttonsBorder.classList.remove('buttons-lose');
 }
 
+// Randomly chosen text for when user wins a round
+const rockWinText = ["Rock wins!! You're cookin'!!", "You take the W with rock! I didn't think you had it in you..."
+, "Rock beats scissors! Keep 'em coming!", "You won the round with rock! thank Go- ummm.. yay!", "Rock for the win! wooo!"
+, "Rock and roll baby! get it?! uh... nevermind."]
+
+const paperWinText = ["Paper wins!! Let's go!!", "You take the WIN with paper! I didn't think you had it in you..."
+, "Paper beats rock! It covers it all up!", "You won the round with paper! thank Go- ummm.. yay!", "Paper for the win! wooo!"]
+
+const scissorsWinText = ["Scissors wins!! Let's go!!", "You slice God with scissors! He forgives though, trust me bro..."
+, "Scissors beats paper! Cut's it right down the middle!", "You won the round with scissors! thank Go- ummm.. yay!"
+, "Scissors for the win! wooo!"]
+
+// Randomly chosen text for when user loses a round
+const rockLoseText = ["Ouch... your rock was easily covered by God.", "You got ROCKED by God! Get it??? You chose ro- nevermind..."
+, "God smashed your rock with *checks notes* ... paper..?", "You'll get 'em next time, rock cowboy.", "Lost to paper! how embarrassing."
+, "How do you lose with rock?!"]
+
+const paperLoseText = ["God slices your paper into infinite pieces!", "Nice try, but paper is too weak against scissors.."
+, "Maybe try rock or scissors? Or just paper again..", "Paper just wasn't it. Think carefully!", "Paper has lost!! Cut in two!"
+, "Unfortunately, Your paper was no match for God almighty."]
+
+const scissorsLoseText = ["Your cheap scissors were easily smashed by a rock.", "Going against Gods rock? Are you nuts?!"
+, "Gods rock called Earth absolutely wrecks your scissors", "Scissors were not the choice. Not the choice at all..."
+, "Scissors do not cut through rock. How did you not know that?", "Nice guess, but scissors lose to rock."]
+
+function chooseText (winnerText) {
+    let randomChoiceNum = Math.floor(Math.random()*winnerText.length);
+    return winnerText[randomChoiceNum];
+}
 // Plays one round, declares the winner with explanation
 let pScore = 0;
 let cScore = 0;
@@ -49,8 +78,16 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
         pScore += 1;
-        const tie = document.getElementById('text-area');
-        tie.textContent = "Plus one for you! Let's go!!"
+        if (playerSelection === "rock") {
+            const tie = document.getElementById('text-area');
+            tie.textContent = chooseText(rockWinText);
+        } else if (playerSelection === "paper") {
+            const tie = document.getElementById('text-area');
+            tie.textContent = chooseText(paperWinText);
+        } else {
+            const tie = document.getElementById('text-area');
+            tie.textContent = chooseText(scissorsWinText);
+        }
         winBorder();
         if (pScore != 5) {
             setTimeout(resetBorder, 1000);
@@ -60,8 +97,16 @@ function playRound(playerSelection, computerSelection) {
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
         playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper") {
         cScore += 1;
-        const tie = document.getElementById('text-area');
-        tie.textContent = "God scored that one. Think carefully!"
+        if (playerSelection === "rock") {
+            const tie = document.getElementById('text-area');
+            tie.textContent = chooseText(rockLoseText);
+        } else if (playerSelection === "paper") {
+            const tie = document.getElementById('text-area');
+            tie.textContent = chooseText(paperLoseText);
+        } else {
+            const tie = document.getElementById('text-area');
+            tie.textContent = chooseText(scissorsLoseText);
+        }
         loseBorder();
         if (cScore != 5) {
             setTimeout(resetBorder, 1000);
@@ -364,6 +409,4 @@ resetDown.addEventListener('mousedown', resetDownClick);
 const resetUp = document.querySelector('.reset');
 resetUp.addEventListener('mouseup', resetGame);
 
-// TODO: Add reset button
-// TODO: Add more text snippets
 // TODO: Try animating the text
