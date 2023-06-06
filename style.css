@@ -206,3 +206,13 @@ body {
   color: white;
   margin-top: 20px;
 }
+
+.reset {
+  border-radius: 12px;
+  margin-top: 25px;
+  box-shadow: 0 0 0.5rem whitesmoke;
+}
+
+.reset-click {
+  transform: scale(0.97);
+}
