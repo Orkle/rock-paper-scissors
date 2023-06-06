@@ -10,6 +10,10 @@ function winBorder() {
     const winner = document.querySelector(".scoreboard");
     winner.classList.remove('scoreboard-lose');
     winner.classList.add('scoreboard-win');
+
+    const buttonsBorder = document.querySelector('.buttons');
+    buttonsBorder.classList.remove('buttons-lose');
+    buttonsBorder.classList.add('buttons-win');
 }
 
 // Turns scoreboard border red when player loses a round
@@ -17,6 +21,10 @@ function loseBorder() {
     const loser = document.querySelector(".scoreboard");
     loser.classList.remove('scoreboard-win');
     loser.classList.add('scoreboard-lose');
+
+    const buttonsBorder = document.querySelector('.buttons');
+    buttonsBorder.classList.remove('buttons-win');
+    buttonsBorder.classList.add('buttons-lose');
 }
 
 // Turns scoreboard border white
@@ -24,6 +32,10 @@ function resetBorder() {
     const border = document.querySelector('.scoreboard');
     border.classList.remove('scoreboard-win');
     border.classList.remove('scoreboard-lose');
+
+    const buttonsBorder = document.querySelector('.buttons');
+    buttonsBorder.classList.remove('buttons-win');
+    buttonsBorder.classList.remove('buttons-lose');
 }
 
 // Plays one round, declares the winner with explanation
@@ -38,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
         winBorder();
         setTimeout(resetBorder, 1000);
         if (pScore != 5) {
-            setTimeout(resetText, 1000);
+            setTimeout(resetText, 1500);
         }
         return 1;
     } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" &&
@@ -49,14 +61,14 @@ function playRound(playerSelection, computerSelection) {
         loseBorder();
         setTimeout(resetBorder, 1000);
         if (cScore != 5) {
-            setTimeout(resetText, 1000);
+            setTimeout(resetText, 1500);
         }
         return 0;
     } else if (playerSelection === computerSelection) {
         const tie = document.getElementById('text-area');
         tie.textContent = "It's a tie! Try again..."
         resetBorder();
-        setTimeout(resetText, 1000);
+        setTimeout(resetText, 1500);
         return 2;
     } else {
         return null;
@@ -319,6 +331,8 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
+// TODO: Stop the play button mouse over effect when at 50% opacity
+// TODO: Add more text snippets
 // TODO: Try animating the text
 
 // BUGS/TO FIX: Grey out play button when game is over, and disallow buttons being pressed
