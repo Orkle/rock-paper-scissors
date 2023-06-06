@@ -285,6 +285,17 @@ function declareWinner() {
     }
 }
 
+// Shrinks button when mouse is down
+function resetDownClick() {
+    const resetButton = document.querySelector('.reset');
+    resetButton.classList.add('reset-click');
+}
+
+// Reloads document
+function resetGame() {
+    location.reload();
+}
+
 // Makes the buttons glow when mouse is hovering over the button
 const glowFistHover = document.querySelector('.fist');
 glowFistHover.addEventListener('mouseover', addHoverGlow);
@@ -345,6 +356,13 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 // Plays a round
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
+
+// Resets game/page
+const resetDown = document.querySelector('.reset');
+resetDown.addEventListener('mousedown', resetDownClick);
+
+const resetUp = document.querySelector('.reset');
+resetUp.addEventListener('mouseup', resetGame);
 
 // TODO: Add reset button
 // TODO: Add more text snippets
