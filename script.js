@@ -346,7 +346,6 @@ shootGrow.addEventListener('mouseup', shootClickGrow);
 const readyShoot = document.querySelector('.play-button');
 readyShoot.addEventListener('click', shoot);
 
-// TODO: Disallow buttons being pressed when game is over
 // TODO: Add reset button
 // TODO: Add more text snippets
 // TODO: Try animating the text
