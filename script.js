@@ -5,7 +5,7 @@ function getComputerChoice() {
     return choice[randomChoiceNum];
 }
 
-// Turns scoreboard border green when player wins a round
+// Turns scoreboard and buttons border green when player wins a round
 function winBorder() {
     const winner = document.querySelector(".scoreboard");
     winner.classList.remove('scoreboard-lose');
@@ -16,7 +16,7 @@ function winBorder() {
     buttonsBorder.classList.add('buttons-win');
 }
 
-// Turns scoreboard border red when player loses a round
+// Turns scoreboard and buttons border red when player loses a round
 function loseBorder() {
     const loser = document.querySelector(".scoreboard");
     loser.classList.remove('scoreboard-win');
@@ -27,7 +27,7 @@ function loseBorder() {
     buttonsBorder.classList.add('buttons-lose');
 }
 
-// Turns scoreboard border white
+// Turns scoreboard and buttons border white
 function resetBorder() {
     const border = document.querySelector('.scoreboard');
     border.classList.remove('scoreboard-win');
@@ -38,7 +38,7 @@ function resetBorder() {
     buttonsBorder.classList.remove('buttons-lose');
 }
 
-// Randomly chosen text for when user wins a round
+// Text for when user wins a round
 const rockWinText = ["Rock wins!! You're cookin'!!", "You take the W with rock! I didn't think you had it in you..."
 , "Rock beats scissors! Keep 'em coming!", "You won the round with rock! thank Go- ummm.. yay!", "Rock for the win! wooo!"
 , "Rock and roll baby! get it?! uh... nevermind."]
@@ -50,7 +50,7 @@ const scissorsWinText = ["Scissors wins!! Let's go!!", "You slice God with sciss
 , "Scissors beats paper! Cut's it right down the middle!", "You won the round with scissors! thank Go- ummm.. yay!"
 , "Scissors for the win! wooo!"]
 
-// Randomly chosen text for when user loses a round
+// Text for when user loses a round
 const rockLoseText = ["Ouch... your rock was easily covered by God.", "You got ROCKED by God! Get it??? You chose ro- nevermind..."
 , "God smashed your rock with *checks notes* ... paper..?", "You'll get 'em next time, rock cowboy.", "Lost to paper! how embarrassing."
 , "How do you lose with rock?!"]
@@ -63,6 +63,7 @@ const scissorsLoseText = ["Your cheap scissors were easily smashed by a rock.", 
 , "Gods rock called Earth absolutely wrecks your scissors", "Scissors were not the choice. Not the choice at all..."
 , "Scissors do not cut through rock. How did you not know that?", "Nice guess, but scissors lose to rock."]
 
+// Randomly choses a phrase from the win or lose texts
 function chooseText (winnerText) {
     let randomChoiceNum = Math.floor(Math.random()*winnerText.length);
     return winnerText[randomChoiceNum];
@@ -351,11 +352,8 @@ glowSheetHover.addEventListener('mouseover', addHoverGlow);
 const glowSliceHover = document.querySelector('.slice');
 glowSliceHover.addEventListener('mouseover', addHoverGlow);
 
-
 const shootButtonHover = document.querySelector('.play-button');
 shootButtonHover.addEventListener('mouseover', addHoverGlow);
-
-
 
 // Makes buttons glow when clicked
 const glowFistClicked = document.querySelector('.fist');
